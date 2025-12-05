@@ -1,0 +1,15 @@
+meta {
+  name: Setup Current PC
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{serveur}}/ordinateur/setup
+  body: none
+  auth: none
+}
+
+script:post-response {
+  bru.setVar("target_id", res.body.id);
+}
